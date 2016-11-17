@@ -1,21 +1,12 @@
-// var SuperheroList = React.createClass({
-//   render: function(){
-//     return(
-//       <div>
-//       things....
-//       </div>
-//     );
-//   }
-// });//call this in your .render below
 var SuperheroList = React.createClass({
   render: function(){
     var SuperheroNodes = this.props.data.map(function(superindex){
       return (
-        <div key={superindex.id}>//this key is part of the giphy api requirements
+        <div key={superindex.id}>
           <img src={superindex.images.original.url}/>
         </div>
       )
-    }); //data relates to what you called Superherolist below
+    }); //data relates to what you called Superherolist below.....key is a requirement of giphy api
     return (
       <div>
         {SuperheroNodes}
@@ -72,9 +63,9 @@ success: function(data){//success is like your promise
     return(
       <div>
         <button onClick={this.loadSuperheroes}>click for stuff</button>
-        <SuperheroList data={this.state.list}/>//sets this.state.list to var data
+        <SuperheroList data={this.state.list}/>
       </div>
-    );//{this.state.list}goes with initialstate
+    );//{this.state.list}goes with initialstate...data is now variable for this.state.list
   }
 });
 
